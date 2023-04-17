@@ -33,7 +33,7 @@ This will do the following:
 
 ![](dagit_run_screenshot.png)
 
-**Alternatively, docker compose can automatically run the ETL job without using Dagit UI.**
+**Alternatively, docker compose can automatically run the ETL job without using Dagit UI.**\
 Simply change the command for `analytics` service in `docker-compose.yml` to:\
 `[ "dagster", "job", "execute", "-f", "analytics.py" ]`
 
@@ -41,7 +41,3 @@ Simply change the command for `analytics` service in `docker-compose.yml` to:\
 **Analytics for the 3 devices will be stored in MySQL**
 
 ![](mysql_screenshot.png)
-
-## Assumptions
-1. 
-2. The required `total_distance` is the end-to-end distance traveled by the device (not cumulative)
