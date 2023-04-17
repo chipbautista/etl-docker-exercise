@@ -27,7 +27,7 @@ This will do the following:
 1. Spin up a Postgres DB and create a `devices` table
 2. Spin up a MySQL DB
 3. Run the Python script that inserts device data into the `devices` table.
-4. Run `dagit` on port `3000`, which you can access on `http://localhost:3000`. You will be able to manually trigger the ETL job from here. 
+4. Run `dagit` on port `3000`, which you can access on http://localhost:3000. You will be able to manually trigger the ETL job from here. 
 
 ![](dagit_screenshot.png)
 
@@ -41,3 +41,7 @@ Simply change the command for `analytics` service in `docker-compose.yml` to:\
 **Analytics for the 3 devices will be stored in MySQL**
 
 ![](mysql_screenshot.png)
+
+## Assumptions
+1. The ETL job will only be run once, since this is only a simple exercise. It can be extended to run on schedule and calculate device analytics every hour. This will require a small change in the query to only pull the data that has not been processed.
+2. "Total distance" means the end-to-end distance traveled by the device (straight line path). An alternative interpretation is the cumulative distance traveled (from point A to B to C and so on...)
