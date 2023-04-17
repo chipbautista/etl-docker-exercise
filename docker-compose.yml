@@ -44,4 +44,7 @@ services:
       - psql_db
       - mysql_db
       - main
-    command: [ "python", "-u", "./analytics.py" ]
+    ports:
+      - "3000:3000"
+    command: [ "dagit", "-f", "analytics.py", "-h", "0.0.0.0" ]
+    # command: [ "dagster", "job", "execute", "-f", "analytics.py" ]
